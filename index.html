@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sitio web para mi novia linda</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: papayawhip; /* Cambiamos el color de fondo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #0070c9;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #005293;
+        }
+        .hidden {
+            display: none; /* Clase para ocultar el contenido */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainContent">
+        <h2>❤️La contraseña es el día más importante de todas:❤️</h2>
+        <form id="passwordForm" onsubmit="checkPassword(event)">
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <div class="container hidden" id="hiddenContent">
+        <h1>Te Amo con Mi Alma</h1>
+        <p>
+            Te amo mucho mi niña linda, siempre lo haré, tenerte a ti es lo más precioso que me ha podido pasar. Amo cuando dices que doy paz a ti y a tu corazón. Amo mucho que seas tú, eres tan única que amo tanto todo de ti. Me das tanta paz, le das un brillo a mis ojitos. Simplemente estoy enamorado de ti, te amo de aquí a la luna a pasitos de tortuga ❤️
+        </p>
+        <p class="signature">Con todo mi amor,<br> @visaq</p>
+
+        <div class="btn-container">
+            <a href="https://www.youtube.com/watch?v=VRpzJabYlQQ" target="_blank" class="btn">❤️Apriete el botoncito de aquí mi amor❤️</a>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            var passwordInput = document.getElementById('password').value;
+            var correctPassword = "271122";
+
+            if (passwordInput === correctPassword) {
+                document.getElementById('message').innerText = "Contraseña correcta. Cargando contenido...";
+                document.getElementById('mainContent').classList.add('hidden'); // Oculta el contenido de ingreso
+                document.getElementById('hiddenContent').classList.remove('hidden'); // Muestra el contenido oculto
+            } else {
+                document.getElementById('message').innerText = "Contraseña incorrecta. Inténtelo de nuevo bebé.";
+            }
+        }
+    </script>
+</body>
+</html>
